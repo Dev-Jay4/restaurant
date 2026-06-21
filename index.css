@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+/* Ensure the white/black monochrome theme overrides any other theme variables */
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --panel2: #fafafa;
+  --text: #111111;
+  --muted: #666666;
+  --border: #e5e5e5;
+  --accent: #111111; /* Pure black for primary elements */
+  --accent2: #111111;
+  --danger: #ff3b30;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: -0.01em;
+}
+
+/* Last-resort override to force monochrome (prevents dark-blue flash) */
+:root {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+#root {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+body {
+  background: #ffffff !important;
+  color: #111111 !important;
+}
+
+* {
+  color: inherit;
+}
+
+.appRoot,
+.topbar,
+.section,
+.card {
+  background: transparent;
+}
+
+
+
+

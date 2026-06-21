@@ -1,0 +1,559 @@
+/* Restaurant UI styles - Professional Minimal Monochrome Theme */
+
+:root {
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --panel2: #fafafa;
+  --text: #111111;
+  --muted: #666666;
+  --border: #e5e5e5;
+  --accent: #111111; /* Pure black for primary elements */
+  --accent2: #111111;
+  --danger: #ff3b30;
+}
+
+* {
+  box-sizing: border-box;
+  letter-spacing: -0.01em; /* Gives typography a cleaner, high-end feel */
+}
+
+.appRoot {
+  min-height: 100svh;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid var(--border);
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.logoDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 0px; /* Minimalist square instead of a dot */
+  background: var(--accent);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.brand:hover .logoDot {
+  transform: rotate(90deg); /* Playful, clean interaction */
+}
+
+.brandName {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+}
+
+.brandTag {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navBtn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--muted);
+  padding: 8px 16px;
+  border-radius: 0px; /* Sharp corners for professional look */
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.navBtn:hover {
+  color: var(--text);
+  border-color: var(--border);
+  background: var(--panel2);
+}
+
+.navBtn:active {
+  transform: scale(0.98);
+}
+
+.navBtn.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.cartPill {
+  padding: 8px 14px;
+  border-radius: 0px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.cartPill strong {
+  color: var(--text);
+}
+
+.main {
+  padding: 40px 24px;
+  flex: 1;
+}
+
+.layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.section {
+  background: var(--panel);
+  border-top: 2px solid var(--accent); /* High contrast header indicator */
+  border-bottom: 1px solid var(--border);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-radius: 0px;
+  padding: 24px;
+}
+
+.section h2 {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 520px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0px;
+  padding: 16px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card .muted {
+  font-size: 13px;
+  line-height: 1.4;
+  min-height: 38px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  padding: 10px 16px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  background: var(--panel2);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent);
+}
+
+.btn.primary:hover {
+  background: #222222;
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border-color: var(--border);
+  background: #ffffff;
+  color: var(--muted);
+}
+
+.error {
+  color: var(--danger);
+  background: #fff5f5;
+  border: 1px solid #ffccd0;
+  padding: 12px;
+  border-radius: 0px;
+  font-size: 14px;
+}
+
+.cartList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cartItem {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 0px;
+  border: 1px solid var(--border);
+  background: var(--panel2);
+}
+
+.ciLeft {
+  flex: 1;
+  min-width: 0;
+}
+
+.ciName {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.ciSub {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.ciRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.ciSubtotal {
+  font-weight: 700;
+}
+
+.qtyControls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mini {
+  padding: 6px 10px;
+  border-radius: 0px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: all 0.1s ease;
+}
+
+.mini:hover {
+  border-color: var(--accent);
+}
+
+.mini.qty {
+  cursor: default;
+  min-width: 32px;
+  text-align: center;
+  background: transparent;
+  border-color: transparent;
+}
+
+.mini.danger {
+  color: var(--danger);
+}
+
+.mini.danger:hover {
+  border-color: var(--danger);
+  background: #fff5f5;
+}
+
+.mini:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.totals {
+  margin-top: 20px;
+}
+
+.totalRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.totalRow span {
+  color: var(--text);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.totalRow .price {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.checkout {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 0px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--text);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+}
+
+.checkout .btn {
+  padding: 14px;
+  font-size: 14px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111111;
+  font-weight: 600;
+  z-index: 50;
+}
+
+/* Luxury minimal notification style */
+.toast {
+  margin-top: 20px;
+  padding: 16px;
+  border-radius: 0px;
+  border-left: 3px solid var(--accent);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #ffffff;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.toastTitle {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+}
+
+.toastBody {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Admin Panel Enhancements */
+.adminHeader h2 {
+  margin: 0 0 6px;
+}
+
+.tokenForm {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: end;
+}
+
+@media (max-width: 720px) {
+  .tokenForm {
+    grid-template-columns: 1fr;
+  }
+}
+
+.orders {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* The kitchen ticket layout - looks like a clean restaurant receipt */
+.order {
+  padding: 20px;
+  border-radius: 0px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+}
+
+.orderTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.orderId {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.orderMeta {
+  color: var(--text);
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.orderDate {
+  color: var(--muted);
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+.orderTotal {
+  font-weight: 700;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.orderItems {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.orderItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 14px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border);
+}
+
+.orderItem:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.orderNotes {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 13px;
+  font-style: italic;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
