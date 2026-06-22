@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "dev:backend": "node server/index.js",
-    "dev:all": "concurrently -k -n FE,BE -c cyan,green \"npm run dev\" \"npm run dev:backend\"",
+   "server": "cd server && node server.js",
+    "client": "vite",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
